@@ -1,6 +1,9 @@
 import PropTypes from "prop-types";
 
-function NavBar({ pokemonList, handleClick }) {
+function NavBar({ pokemonList, handleClick, pokemonIndex }) {
+  if (pokemonIndex === 3) {
+    alert(`pika pikachu !!!`);
+  }
   return (
     <>
       {pokemonList.map((pokemon, index) => (
@@ -14,6 +17,7 @@ function NavBar({ pokemonList, handleClick }) {
 
 NavBar.propTypes = {
   handleClick: PropTypes.func.isRequired,
+  pokemonIndex: PropTypes.number.isRequired,
   pokemonList: PropTypes.shape(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
