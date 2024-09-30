@@ -32,12 +32,8 @@ const pokemonList = [
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
-  const handlePrevious = () => {
-    setPokemonIndex(pokemonIndex - 1);
-  };
-
-  const handleNext = () => {
-    setPokemonIndex(pokemonIndex + 1);
+  const handleClick = (index) => {
+    setPokemonIndex(index);
   };
 
   return (
@@ -46,8 +42,7 @@ function App() {
       <NavBar
         pokemonIndex={pokemonIndex}
         pokemonList={pokemonList}
-        handleNext={handleNext}
-        handlePrevious={handlePrevious}
+        handleClick={handleClick}
       />
     </div>
   );
